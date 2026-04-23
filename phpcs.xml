@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ruleset name="PPF Pingback Direct">
+	<description>PHP_CodeSniffer ruleset for PPF Pingback Direct.</description>
+
+	<arg value="ps"/>
+	<arg name="colors"/>
+
+	<file>pingback-permitted-from.php</file>
+	<file>wp-trackback.php</file>
+	<file>wp-admin/</file>
+	<file>wp-includes/</file>
+	<file>tests</file>
+
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/tmp/*</exclude-pattern>
+	<exclude-pattern>*/wp-includes/class-wp-xmlrpc-server.php</exclude-pattern>
+
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Docs"/>
+
+	<!-- Conflict with PHPUnit 12. -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+    	<exclude-pattern>/tests/PPF_*\.php$</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+    	<exclude-pattern>/tests/PPF_*\.php$</exclude-pattern>
+	</rule>
+</ruleset>

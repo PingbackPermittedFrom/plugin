@@ -1,0 +1,14 @@
+parameters:
+	level: 9
+	paths:
+		- pingback-permitted-from.php
+		- wp-trackback.php
+		- wp-admin
+		- wp-includes
+		- tests
+	excludePaths:
+		- wp-includes/class-wp-xmlrpc-server.php
+		- wp-trackback.php
+	scanFiles:
+		- vendor/php-stubs/wordpress-tests-stubs/wordpress-tests-stubs.php
+	tmpDir: .phpstan

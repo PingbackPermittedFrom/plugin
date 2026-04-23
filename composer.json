@@ -1,0 +1,40 @@
+{
+	"name": "ppf1/pingback-permitted-from",
+	"description": "Pingback Permitted From (PPF).",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Charles Lecklider",
+			"email": "wordpress@invis.net"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"brain/monkey": "@stable",
+		"phpstan/extension-installer": "@stable",
+		"dealerdirect/phpcodesniffer-composer-installer": "@stable",
+		"phpunit/phpunit": "12.*",
+		"phpstan/phpstan": "@stable",
+		"phpstan/phpstan-phpunit": "@stable",
+		"szepeviktor/phpstan-wordpress": "@stable",
+		"wp-coding-standards/wpcs": "@stable",
+		"php-stubs/wordpress-tests-stubs": "@stable",
+		"roots/wordpress": "@stable"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"phpstan/extension-installer": true,
+			"roots/wordpress-core-installer": true
+		}
+	},
+	"scripts": {
+		"phpcs": "phpcs -p",
+		"phpcbf": "phpcbf -p",
+		"phpstan": "phpstan analyse -v",
+		"phpunit": "phpunit"
+	}
+}
